@@ -2,6 +2,7 @@ from typing import Any
 
 from pydantic import BaseModel
 
+
 class BlurringModel(BaseModel):
     def __init__(self, model: Any) -> None:
         '''
