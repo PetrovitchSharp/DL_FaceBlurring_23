@@ -269,7 +269,7 @@ MODEL:
     NAME: SemSegFPNHead
     NORM: GN
     NUM_CLASSES: 54
-  WEIGHTS: detectron2_output/retinanet_R_101_FPN/model_final.pth
+  WEIGHTS: https://dl.fbaipublicfiles.com/detectron2/COCO-Detection/retinanet_R_101_FPN_3x/190397697/model_final_971ab9.pkl
 OUTPUT_DIR: detectron2_output/retinanet_R_101_FPN
 SEED: -1
 SOLVER:

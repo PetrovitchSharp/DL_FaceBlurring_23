@@ -56,13 +56,11 @@ def main():
 
     cfg = get_cfg()
     cfg.merge_from_file(args.cfg)
-    cfg.MODEL.WEIGHTS = ''
 
     os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
     trainer = Trainer(cfg)
     trainer.resume_or_load(resume=False)
     trainer.train()
-    cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, 'model_final.pth')
 
 
 if __name__ == "__main__":
