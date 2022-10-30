@@ -130,3 +130,11 @@ dmypy.json
 
 /bot/photos/*.jpg
 /models/*.joblib
+
+# data
+data
+notebooks/output
+notebooks/input.jpg
+detectron2_output/faster_rcnn_R_101_FPN
+detectron2_output/faster_rcnn_R_50_FPN
+detectron2_output/retinanet_R_101_FPN

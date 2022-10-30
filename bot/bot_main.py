@@ -4,7 +4,7 @@ import os
 from aiogram import Bot, Dispatcher, executor, types
 import joblib
 
-from model_base import BlurringModel
+from src.models import BlurringModel
 
 
 # Config parser
