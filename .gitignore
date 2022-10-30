@@ -135,3 +135,6 @@ dmypy.json
 data
 notebooks/output
 notebooks/input.jpg
+notebooks/faster_rcnn_R_101_FPN
+notebooks/faster_rcnn_R_50_FPN
+notebooks/retinanet_R_101_FPN
