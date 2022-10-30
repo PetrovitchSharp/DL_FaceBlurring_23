@@ -6,7 +6,7 @@ from detectron2.config import get_cfg
 from detectron2.engine import DefaultPredictor
 from PIL import Image
 
-from src.blurring import blur_bbox_oval
+from blurring import blur_bbox_oval
 
 
 class BlurringModel:
