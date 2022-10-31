@@ -76,3 +76,15 @@
 | retinanet_R_101_FPN | 0.035934 |
 
 Один GPU может в секунду обработать около 28 изображений в секунду. Можно обучить более легкую модель, если будет необходимо масштабировать решение.
+
+# Запуск бота 
+
+Для запуска бота необходимо добавить в settings.ini все необходимые пути и токен для бота. Затем необходимо запустить скрипт src/bot_main.py
+
+Пример работы бота:
+
+![Before start](https://sun9-east.userapi.com/sun9-35/s/v1/ig2/MX0acB_ZrZFP5H6DEPdi31iQRo6yUOFP6DIVzXp1b2RtuoqZyedQXkQg-pBE9pd-LshTFbcIHSLSbSsszF_M7sXA.jpg?size=720x1600&quality=95&type=album)
+
+![Start](https://sun9-east.userapi.com/sun9-26/s/v1/ig2/4cnaa0hup0N2dSbeeeHhqSXelZq6RCNyT6A6vhVB-_9rlbRJfaXn2QtOyk1cG4CxnCkpNplnO8SHNfFBjKEaymLZ.jpg?size=720x1600&quality=95&type=album)
+
+![RickRolled](https://sun9-east.userapi.com/sun9-32/s/v1/ig2/joYqKt07cZqVRvNdtSBEnIewFGU-tDW7sSc-eqNNGp0X3qOhSARFDyW3XLlHfs7rrgHtdcuC3VCyVgrzHCjJXfiB.jpg?size=720x1600&quality=95&type=album)
