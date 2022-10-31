@@ -129,6 +129,7 @@ dmypy.json
 .pyre/
 
 /photos/*.jpg
+settings.ini
 
 # data
 data
