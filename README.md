@@ -10,6 +10,17 @@
 
 ## Результаты экспериментов с 3 моделями:
 
+В качестве метрик качества детекции были выбраны метрики AP (Average precision):
+
+1. AP - Average precision
+2. AP50 - Average precision при IoU > 0.5
+3. AP75 - Average precision при IoU > 0.75
+4. APs - Average precision на малых по площади объектах
+5. APm - Average precision на средних по площади объектах 
+6. APl - Average precision на больших по площади объектах
+
+Было произведено сравнение моделей [Faster RCNN R 50 FPN, Faster RCNN R 101 FPN](https://paperswithcode.com/lib/detectron2/faster-r-cnn) и [Retina Net R 101 FPN](https://paperswithcode.com/model/retinanet?variant=retinanet-r101-3x) при различных значениях learning rate
+
 
 | Model | LR |   AP   |  AP50  |  AP75  |  APs   |  APm   |  APl   |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -23,7 +34,7 @@
 | retinanet_R_101_FPN | 0.002 | 30.106 | 54.910 | 30.166 | 16.891 | 59.845 | 69.292 |
 | retinanet_R_101_FPN | 0.004 | 20.012 | 29.655 | 24.456 | 6.317 | 52.953 | 65.990 |
 
-<p>Чуть лучшее качество имеет модель faster_rcnn_R_101_FPN, поэтому далее будем использовать именно ее.</p><br>
+<p>Чуть лучшее качество имеет модель faster_rcnn_R_101_FPN с lr = 0.002, поэтому далее будем использовать именно ее.</p><br>
 
 # Установка зависимостей
 
@@ -47,7 +58,11 @@
 
 Обучение модели занимает около 45 минут на GPU RTX3090.
 
+Предобученную модель вы можете скачать с [гугл диска](https://drive.google.com/file/d/1GoRCh9oiy3fLYwvrkR-glF0XCiRYxlJ0/view?usp=share_link). Для её использования вам необходимо прописать в конфиг бота путь к распакованной модели
+
 # Запуск примера инференса
+Для запуска инференса на CPU необходимо в файле configs/faster_rcnn_R_101_FPN.yaml заменить DEVICE с cuda на cpu
+
 1. Запуск инференса для примера из example/example.jpg. Результат будет сохранен в файл example/blurred_example.jpg
 
         python src/sample_inference.py
