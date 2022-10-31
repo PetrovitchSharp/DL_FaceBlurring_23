@@ -2,27 +2,30 @@ import configparser
 import os
 
 from aiogram import Bot, Dispatcher, executor, types
-import joblib
 
-from src.models import BlurringModel
+from models import DetectronBlurringModel
 
 
 # Config parser
 config = configparser.ConfigParser()
-config.read("settings.ini")
+config.read("src/settings.ini")
 
 # Telegram API token
 TOKEN = config['Telegram']['token']
+
 # Path to blurring model
-MODEL_PATH = config['Models']['model']
+MODEL_PATH = config['Models']['model_path']
+
+# Path to model's config
+CONFIG_PATH = config['Models']['config_path']
 
 # Bot initialization
 bot = Bot(token=TOKEN)
 dispatcher = Dispatcher(bot)
 
-# Model loading
-model: BlurringModel = joblib.load(MODEL_PATH)
-
+model = DetectronBlurringModel.load_model(
+        CONFIG_PATH,
+        MODEL_PATH)
 
 @dispatcher.message_handler(commands='start')
 async def print_start_message(message: types.Message) -> None:
@@ -75,7 +78,7 @@ async def blur_photo(message: types.Message) -> None:
     )
 
     os.remove('photos/photo.jpg')
-    os.remove('photos/anon_photo.jpg')
+    os.remove('photos/blurred_photo.jpg')
 
 
 if __name__ == '__main__':
