@@ -3,6 +3,7 @@ import os
 
 # import some common detectron2 utilities
 from detectron2.config import get_cfg
+from detectron2.config.config import CfgNode
 from detectron2.data import MetadataCatalog
 from detectron2.data.datasets import register_coco_instances
 from detectron2.engine import DefaultTrainer
@@ -13,13 +14,27 @@ from detectron2.utils.logger import setup_logger
 setup_logger()
 
 
-def build_evaluator(cfg, dataset_name, output_folder=None):
+def build_evaluator(
+    cfg: CfgNode,
+    dataset_name: str,
+    output_folder: str = None
+) -> COCOEvaluator:
     """
     Create COCO Evaluator
+
+    Args:
+        cfg:            Config
+        dataset_name:   Filename of COCO dataset
+        output_folder:  Path to output folder
+
+    Returns:
+        COCO Evaluator
     """
     if output_folder is None:
         output_folder = os.path.join(cfg.OUTPUT_DIR, "inference")
+
     evaluator_type = MetadataCatalog.get(dataset_name).evaluator_type
+
     if evaluator_type in ["coco", "coco_panoptic_seg"]:
         return COCOEvaluator(dataset_name, output_dir=output_folder)
 
@@ -33,11 +48,27 @@ class Trainer(DefaultTrainer):
     """
 
     @classmethod
-    def build_evaluator(cls, cfg, dataset_name, output_folder=None):
+    def build_evaluator(
+        cls,
+        cfg: CfgNode,
+        dataset_name: str,
+        output_folder: str = None
+    ) -> COCOEvaluator:
+        '''
+        Build evaluator method wrapper
+
+        Args:
+            cfg:            Config
+            dataset_name:   Filename of COCO dataset
+            output_folder:  Path to output folder
+
+        Returns:
+            COCO Evaluator
+        '''
         return build_evaluator(cfg, dataset_name, output_folder)
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--cfg',
@@ -45,6 +76,7 @@ def main():
         help='path to config file',
         default='configs/faster_rcnn_R_50_FPN.yaml')
     args = parser.parse_args()
+
     register_coco_instances(
         "wider_face_train", {},
         "data/wider_face_train.json",

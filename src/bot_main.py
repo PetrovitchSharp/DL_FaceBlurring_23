@@ -27,6 +27,7 @@ model = DetectronBlurringModel.load_model(
         CONFIG_PATH,
         MODEL_PATH)
 
+
 @dispatcher.message_handler(commands='start')
 async def print_start_message(message: types.Message) -> None:
     '''

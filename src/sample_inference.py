@@ -1,7 +1,7 @@
 from models import DetectronBlurringModel
 
 
-def main():
+def main() -> None:
     model = DetectronBlurringModel.load_model(
         'configs/faster_rcnn_R_101_FPN.yaml',
         'detectron2_output/faster_rcnn_R_101_FPN/model_final.pth')

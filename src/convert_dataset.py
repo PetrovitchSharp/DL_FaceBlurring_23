@@ -9,7 +9,16 @@ def convert_WIDER_face_dataset_to_COCO_format(
     filename: str,
     image_path: Path
 ) -> Dict:
-    ''' Convert WIDER Face dataset to COCO format '''
+    ''' 
+    Convert WIDER Face dataset to COCO format 
+    
+    Args:
+        filename:   Filename of WIDER dataset
+        image_path: Path to WIDER dataset images
+
+    Returns:
+        Dataset in COCO format
+    '''
     with open(filename) as f:
         lines = f.readlines()
 
@@ -66,7 +75,7 @@ def convert_WIDER_face_dataset_to_COCO_format(
     }
 
 
-def main():
+def main() -> None:
     train_wider_face = 'data/wider_face_split/wider_face_train_bbx_gt.txt'
     image_path = Path('data/WIDER_train/images')
 
