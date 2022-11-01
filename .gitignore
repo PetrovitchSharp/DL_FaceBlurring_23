@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+/photos/*.jpg
+settings.ini
+
+# data
+data
+!data/*.gitkeep
+notebooks/output
+notebooks/input.jpg
+detectron2_output/faster_rcnn_R_101_FPN
+detectron2_output/faster_rcnn_R_50_FPN
+detectron2_output/retinanet_R_101_FPN
+
