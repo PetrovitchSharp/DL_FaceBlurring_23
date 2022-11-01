@@ -88,3 +88,7 @@
 ![Start](https://sun9-east.userapi.com/sun9-26/s/v1/ig2/4cnaa0hup0N2dSbeeeHhqSXelZq6RCNyT6A6vhVB-_9rlbRJfaXn2QtOyk1cG4CxnCkpNplnO8SHNfFBjKEaymLZ.jpg?size=720x1600&quality=95&type=album)
 
 ![RickRolled](https://sun9-east.userapi.com/sun9-32/s/v1/ig2/joYqKt07cZqVRvNdtSBEnIewFGU-tDW7sSc-eqNNGp0X3qOhSARFDyW3XLlHfs7rrgHtdcuC3VCyVgrzHCjJXfiB.jpg?size=720x1600&quality=95&type=album)
+
+# Требуемое оборудование
+
+Для развертывания бота необходим хостинг с видеокартой, поддерживающей технологию CUDA. В случае отсуствия поддержки этой технологии быстродействие бота не гарантируется
